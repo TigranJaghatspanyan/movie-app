@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Search, Home, Tv, Film, List, Clock, ChevronRight, HelpCircle, LogOut } from 'lucide-react'
 
 export default function Sidebar({ isOpen, toggleMenu }: any) {
-  const [hoveredItem, setHoveredItem] = useState(null)
+  const [hoveredItem, setHoveredItem] = useState<any>(null)
 
   const menuItems = [
     { icon: <Search className="w-6 h-6" />, label: 'Search' },

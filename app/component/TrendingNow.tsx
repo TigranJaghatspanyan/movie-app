@@ -5,9 +5,9 @@ export default function TrendingNow({ content, setFeaturedContent }: any) {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const scrollRef = useRef(null);
+  const scrollRef: any = useRef(null);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: any) => {
     setIsDragging(true);
     setStartX(e.pageX - scrollRef.current.offsetLeft);
     setScrollLeft(scrollRef.current.scrollLeft);
@@ -21,7 +21,7 @@ export default function TrendingNow({ content, setFeaturedContent }: any) {
     setIsDragging(false);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: any) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
@@ -29,7 +29,7 @@ export default function TrendingNow({ content, setFeaturedContent }: any) {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  const handleItemClick = (item) => {
+  const handleItemClick = (item: any) => {
     setFeaturedContent({
       ...item,
       type: "MOVIE",
@@ -73,7 +73,7 @@ export default function TrendingNow({ content, setFeaturedContent }: any) {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {content.map((item) => (
+        {content.map((item: any) => (
           <div
             key={item.id}
             className="flex-shrink-0 cursor-pointer"

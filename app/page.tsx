@@ -17,7 +17,7 @@ import data from "../data.json";
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [featuredContent, setFeaturedContent] = useState(data.Featured);
+  const [featuredContent, setFeaturedContent] = useState<any>(data.Featured);
   const [trendingContent, setTrendingContent] = useState(
     data.TendingNow.slice(0, 8)
   );
@@ -34,7 +34,7 @@ export default function HomePage() {
     }
   }, []);
 
-  const handleTrendingClick = (item) => {
+  const handleTrendingClick = (item: any) => {
     setFeaturedContent(item);
     sessionStorage.setItem("lastWatched", item.Id);
     setTimeout(() => {
